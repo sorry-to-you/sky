@@ -705,7 +705,8 @@
 	"title": "冷晖之枪",
 	"new_type": 0,
 	"hero_type": 1,
-	"hero_type2": 4
+	"hero_type2": 4,
+	"skin_name": "冷晖之枪|幸存者"
 }, {
 	"ename": 523,
 	"cname": "西施",

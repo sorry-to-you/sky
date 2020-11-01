@@ -31,4 +31,4 @@ def get_proxy():
 
 if __name__ == '__main__':
     proxy = get_proxy()
-    #print("获取的随机ip代理为：",proxy)
+    print("获取的随机ip代理为：",proxy)

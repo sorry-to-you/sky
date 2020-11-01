@@ -13,7 +13,7 @@
 import json
 import os
 import requests
-import headersdatas
+import headersdatastool
 def read_ipdata_file_from_json():
     """从IP。data。json读取"""
     file = open("../files/ipdatas.json","r")
@@ -37,7 +37,7 @@ def main():
         #https://www.sohu.com
         html_url = "https://www.sohu.com"
         response = requests.get(html_url,
-                                headers=headersdatas.get_headers(),
+                                headers=headersdatastool.get_headers(),
                                 proxies=element)
          #200请求成功
         if response.status_code==200:

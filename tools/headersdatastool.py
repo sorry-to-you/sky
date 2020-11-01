@@ -62,4 +62,4 @@ def get_headers():
     return user_agent[index]
 if __name__ == '__main__':
     headers = get_headers()
-    #print("随机获取的头",headers)
+    print("随机获取的头",headers)

@@ -14,30 +14,39 @@ import os
 import time
 
 start = time.time()  # 程序开始时间
+#
+# url = requests.get('http://pvp.qq.com/web201605/js/herolist.json').content
+#
+# jsonFile = json.loads(url)
+# file = open('../files/herolist.json','w',encoding='utf-8')
+# content = json.dumps(jsonFile,indent=2)
+# file.write(content)
+# file.close()# 提取json
+jsonFile1 = open('../files/herolist.json','r',encoding='utf-8')
+jsonFile = jsonFile1.read()
+jsonFile_str = json.loads(jsonFile)
+#print(type(jsonFile_str))
 
-#url = requests.get('http://pvp.qq.com/web201605/js/herolist.json').content
-
-#jsonFile = json.loads(url)  # 提取json
-jsonFile1 = open('../files/herolist.json')
-jsonFile = json.loads(jsonFile1)
-print(jsonFile)
 
 x = 0  # 用于记录下载的图片张数
 
 # 目录不存在则创建
-hero_dir = 'D:\PyCharmworkpace/pythoncode1/ruomeng/programe/sky/files\pictures\skin2\\'
+hero_dir = 'D:\PyCharmworkpace/pythoncode1/ruomeng/programe/sky/files\pictures\skin\\'
 if not os.path.exists(hero_dir):
     os.mkdir(hero_dir)
 
-for m in range(len(jsonFile)):
+for m in range(len(jsonFile_str)):
 
-    ename = jsonFile[m]['ename']  # 编号
+    ename = jsonFile_str[m]['ename']  # 编号
 
-    cname = jsonFile[m]['cname']  # 英雄名字
+    cname = jsonFile_str[m]['cname']  # 英雄名字
+    # print(ename)
+    # print(type(ename))
 
-    skinName = jsonFile[m]['skin_name'].split('|')  # 切割皮肤的名字，用于计算每个英雄有多少个皮肤
+    skinName = jsonFile_str[m]['skin_name'].split('|')  # 切割皮肤的名字，用于计算每个英雄有多少个皮肤
 
     skinNumber = len(skinName)
+
 
     # 下载图片,构造图片网址
 
